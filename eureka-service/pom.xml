@@ -9,11 +9,11 @@
         <relativePath>../</relativePath> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>com.petrichor</groupId>
+    <groupId>com.example</groupId>
     <artifactId>eureka-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>eureka-service</name>
-    <description>petrichor eureka service</description>
+    <description>eureka-service project for Spring Boot</description>
 
     <dependencies>
         <dependency>
