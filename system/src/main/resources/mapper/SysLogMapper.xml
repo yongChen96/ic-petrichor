@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.petrichor.system.mapper.SysLogMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.petrichor.system.entity.SysLog">
+        <result column="id" property="id" />
+        <result column="create_time" property="createTime" />
+        <result column="create_user" property="createUser" />
+        <result column="ip" property="ip" />
+        <result column="type" property="type" />
+        <result column="user_name" property="userName" />
+        <result column="description" property="description" />
+        <result column="class_path" property="classPath" />
+        <result column="action_method" property="actionMethod" />
+        <result column="uri" property="uri" />
+        <result column="method" property="method" />
+        <result column="start_time" property="startTime" />
+        <result column="finish_time" property="finishTime" />
+        <result column="ua" property="ua" />
+        <result column="del_state" property="delState" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id,
+        create_time,
+        create_user,
+        ip, type, user_name, description, class_path, action_method, uri, method, start_time, finish_time, ua, del_state
+    </sql>
+
+</mapper>
