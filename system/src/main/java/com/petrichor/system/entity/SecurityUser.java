@@ -17,6 +17,8 @@ import java.util.List;
 @Data
 public class SecurityUser implements UserDetails {
 
+    private static final long serialVersionUID = 1341264497295234223L;
+
     /**
      * 用户信息
      **/

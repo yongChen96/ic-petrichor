@@ -3,6 +3,7 @@ package com.petrichor.system.entity;
 import com.example.common.baseclass.BaseEntity;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -34,6 +35,7 @@ public class User extends BaseEntity<String> {
     @TableField("nick_name")
     private String nickName;
 
+    @JsonIgnore
     @ApiModelProperty(value = "密码")
     @TableField("password")
     private String password;
