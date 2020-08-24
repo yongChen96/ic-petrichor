@@ -24,9 +24,10 @@ import java.util.List;
 public class MybatisPlusGeneratorConfig {
 
     public static void GeneratorConfig(GeneratorParams generatorParams){
-        // 代码生成器
+        // 1.******************** 代码生成器 *********************
         AutoGenerator mpg = new AutoGenerator();
-        // 全局配置
+
+        // 2.**************全局策略配置**************
         GlobalConfig gc = new GlobalConfig();
         gc.setOutputDir(generatorParams.getOutputDir() + "/java");
         gc.setAuthor(generatorParams.getAuthor());
@@ -53,7 +54,7 @@ public class MybatisPlusGeneratorConfig {
 
         mpg.setGlobalConfig(gc);
 
-        // 数据源配置
+        // 3.**************数据源配置**************
         DataSourceConfig dsc = new DataSourceConfig();
         dsc.setDbType(DbType.MYSQL);
         dsc.setUrl("jdbc:mysql://112.74.161.0:3306/ic_database?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true");
@@ -62,12 +63,12 @@ public class MybatisPlusGeneratorConfig {
         dsc.setPassword("root");
         mpg.setDataSource(dsc);
 
-        // 包配置
+        // 4.**************包配置**************
         PackageConfig pc = new PackageConfig();
         // 包路径
         pc.setParent(generatorParams.getPackagePath());
         // 表前缀
-//        pc.setModuleName("t");
+        // pc.setModuleName("t");
         //文件包名
         pc.setMapper("mapper");
         pc.setEntity("entity");
@@ -75,7 +76,7 @@ public class MybatisPlusGeneratorConfig {
         pc.setService("service");
         mpg.setPackageInfo(pc);
 
-        // 自定义配置
+        // 5.**************自定义配置**************
         InjectionConfig cfg = new InjectionConfig() {
             @Override
             public void initMap() {
@@ -90,7 +91,7 @@ public class MybatisPlusGeneratorConfig {
         String templatePathServiceImpl = "templates/serviceImpl.java.ftl";
         String templatePathMapper = "/templates/mapper.java.ftl";
         String templatePathXml = "/templates/mapper.xml.ftl";
-        // 如果模板引擎是 velocity
+        // 如果模板引擎是 velocity(默认)
         // String templatePath = "/templates/mapper.xml.vm";
 
         // 自定义输出配置
@@ -151,7 +152,7 @@ public class MybatisPlusGeneratorConfig {
                 @Override
                 public String outputFile(TableInfo tableInfo) {
                     // 自定义输出文件名 ， 如果你 Entity 设置了前后缀、此处注意 xml 的名称会跟着发生变化！！
-                    return generatorParams.getOutputDir() + "/resources/mapper/"
+                    return generatorParams.getOutputDir() + "/resources/mapper"
                             + "/" + tableInfo.getEntityName() + "Mapper" + StringPool.DOT_XML;
                 }
             });
@@ -162,8 +163,12 @@ public class MybatisPlusGeneratorConfig {
 
         // 配置模板
         TemplateConfig templateConfig = new TemplateConfig();
-
+        templateConfig.setController(null);
+        templateConfig.setService(null);
+        templateConfig.setServiceImpl(null);
+        templateConfig.setMapper(null);
         templateConfig.setXml(null);
+        templateConfig.setEntity(null);
         mpg.setTemplate(templateConfig);
 
         // 策略配置
@@ -187,7 +192,10 @@ public class MybatisPlusGeneratorConfig {
         strategy.setControllerMappingHyphenStyle(true);
         // 此处可以修改为您的表前缀
         strategy.setTablePrefix(generatorParams.getTablePrefix());
+        strategy.setControllerMappingHyphenStyle(false);
         mpg.setStrategy(strategy);
+
+        // 注意！如果您选择了非默认引擎，需要在 AutoGenerator 中 设置模板引擎。
         mpg.setTemplateEngine(new FreemarkerTemplateEngine());
         mpg.execute();
     }
