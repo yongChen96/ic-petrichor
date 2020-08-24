@@ -17,7 +17,7 @@ import com.petrichor.system.service.SysAttService;
  * @since 2020-08-24
  */
 @RestController
-@RequestMapping("/sys-att")
+@RequestMapping("/sysAtt")
 @Api(value = "SysAttController", description = "附件信息表")
 public class SysAttController extends BaseController {
 
