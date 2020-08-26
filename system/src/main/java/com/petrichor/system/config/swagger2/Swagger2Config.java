@@ -20,12 +20,12 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Configuration
 @EnableSwagger2
 @EnableKnife4j
-
 public class Swagger2Config {
     @Bean
     public Docket createRestApi() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
+                .groupName("业务接口")
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.petrichor.system.controller"))
                 .paths(PathSelectors.any())

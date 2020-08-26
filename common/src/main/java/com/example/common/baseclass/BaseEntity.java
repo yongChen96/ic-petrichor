@@ -28,7 +28,7 @@ public class BaseEntity<T> implements Serializable, Cloneable {
     public static final String UPDATE_TIME = "update_time";
     public static final String UPDATE_USER = "update_user";
 
-    @TableId(value = "id", type = IdType.INPUT)
+    @TableId(value = "id", type = IdType.ASSIGN_UUID)
     @ApiModelProperty("主键")
     @NotNull(message = "id不能为空", groups = {BaseEntity.Update.class})
     protected T id;

@@ -36,3 +36,20 @@ secure:
       - /**/*.png
       - /**/*.ico
       - /webjars/springfox-swagger-ui/**
+      - /sysAtt/*
+
+
+fdfs:
+  connect-timeout: 600
+  so-timeout: 1500
+  tracker-list:
+    - 101.200.225.213:22122
+  web-server-url: 101.200.225.213
+  resHost: http://101.200.225.213:8888/
+  storagePort: 23000
+  thumb-image:
+    width: 150
+    height: 150
+  http:
+    anti_steal_token: true
+    secret_key: FastDFS1234567890
