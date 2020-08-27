@@ -1,13 +1,12 @@
 package com.petrichor.system.controller;
 
 
+import com.example.common.annotation.loginuser.InjectUser;
+import com.example.common.annotation.loginuser.User;
 import com.example.common.restful.Result;
 import com.petrichor.system.entity.SysAtt;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import com.example.common.baseclass.BaseController;
 import io.swagger.annotations.Api;
 import com.petrichor.system.service.SysAttService;
@@ -43,6 +42,5 @@ public class SysAttController extends BaseController {
     public Result<SysAtt> uploadFile(@RequestParam("file") MultipartFile file) {
         return success(sysAttService.uploadFile(file));
     }
-
 
 }
