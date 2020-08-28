@@ -1,4 +1,4 @@
-package com.example.common.annotation.loginuser;
+package com.example.security.loginuser;
 
 import lombok.Data;
 

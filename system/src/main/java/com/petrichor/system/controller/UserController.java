@@ -1,11 +1,12 @@
 package com.petrichor.system.controller;
 
 
-import com.example.common.annotation.loginuser.InjectUser;
-import com.example.common.annotation.loginuser.User;
+import com.example.security.loginuser.InjectUser;
+import com.example.security.loginuser.User;
 import com.example.common.restful.Result;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -36,7 +37,7 @@ public class UserController extends BaseController {
      * @Description: 获取当前登录用户信息
      * @Date: 14:43 2020/8/27
      * @Param: [user]
-     * @return: com.example.common.restful.Result<com.example.common.annotation.loginuser.User>
+     * @return: com.example.common.restful.Result<com.example.security.loginuser.User>
      **/
     @GetMapping("/userInfo")
     @ApiOperation(value = "获取用户信息", notes = "获取用户信息")

@@ -1,6 +1,6 @@
 package com.petrichor.system.config.webmvc;
 
-import com.example.common.annotation.loginuser.InjectUserResolver;
+import com.example.security.loginuser.InjectUserResolver;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;

@@ -1,8 +1,6 @@
 package com.petrichor.system.controller;
 
 
-import com.example.common.annotation.loginuser.InjectUser;
-import com.example.common.annotation.loginuser.User;
 import com.example.common.restful.Result;
 import com.petrichor.system.entity.SysAtt;
 import io.swagger.annotations.ApiOperation;

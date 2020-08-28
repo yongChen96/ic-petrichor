@@ -23,8 +23,8 @@ import java.util.Map;
  * signature的生成算法：
  * HMACSHA512(base64UrlEncode(header) + "." +base64UrlEncode(payload),secret)
  *
- * @author macro
- * @date 2018/4/26
+ * @author yongchen
+ * @date 2020/4/26
  */
 @Slf4j
 public class JwtTokenUtil {
